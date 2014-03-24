@@ -1,0 +1,26 @@
+<WordLabel>
+    pos: (500,500)
+    size_hint: (0,0)
+    do_rotation: False
+    size: lbl.size
+    Label:
+    	font_size: 180
+        size_hint: (0,0)
+        id:lbl
+        text: root.my_string
+        size: lbl.texture_size
+
+<Test>
+    f: my_float
+    orientation: 'vertical'
+    FloatLayout:
+        id: my_float
+    TextInput:
+        id: my_text_input
+        multiline: False
+        font_size: 30
+        size_hint_y: None
+        height: 50
+        focus: True
+        text: 'Insert Text'
+        on_text_validate: root.GenerateLabel(self.text)
